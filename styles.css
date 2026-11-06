@@ -75,7 +75,7 @@ a { color: #6d4c41; }
   padding: 0.75rem 0;
   color: #fff;     
   text-decoration: none;
-}                                    /* big tap targets */}                                    /* big tap targets */
+}                                    /* big tap targets */                                    /* big tap targets */
 
 /* =========================================================
    Example C: progressive enhancement (exactly as in the handout)
@@ -118,4 +118,64 @@ a { color: #6d4c41; }
     display: flex;
     gap: 1.5rem;
   }
+}
+
+/* Order Form */
+.order-section {
+  padding: 1.5rem 1rem;
+}
+
+#order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 500px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3e2723;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.submit-btn {
+  font-size: 16px;
+  min-height: 44px;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-group textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Example C Error Message Styling */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 0.25rem;
+}
+
+.error-message[hidden] {
+  display: none;
 }
