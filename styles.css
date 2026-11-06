@@ -1,0 +1,121 @@
+/* =========================================================
+   Basic styling (only to make the page readable)
+   ========================================================= */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.5;
+  padding-bottom: 5rem;              /* room for the sticky order bar */
+}
+header, section, footer { padding: 1rem; }
+h1, h2 { margin: 0 0 0.5rem; }
+
+/* Combined header base styles */
+.site-header {
+  background: #3e2723;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.site-header nav {
+  flex-basis: 100%;                  /* menu drops below the logo row */
+}
+
+.menu-toggle {
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+}
+
+.location a,
+.about-link a {    
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+
+.status { display: inline-block; background: #2e7d32; color: #fff;
+          padding: 0.1rem 0.6rem; border-radius: 1rem; font-weight: 600; }
+.menu-item { border: 1px solid #ddd; border-radius: 8px; padding: 0.75rem; }
+.menu-item h3 { margin: 0; font-size: 1.05rem; }
+.price { font-weight: 700; color: #3e2723; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+.gallery img { width: 100%; height: auto; border-radius: 6px; }
+.map-embed { display: none; }        /* desktop-only enhancement */
+.about-full { display: none; }       /* desktop-only enhancement */
+a { color: #6d4c41; }
+
+/* Priority 3: "Order ahead" is a sticky bar in the thumb zone on phones */
+.order-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  padding: 0.75rem 1rem; background: #fff; border-top: 1px solid #ddd;
+}
+.order-button {
+  display: block; text-align: center; min-height: 44px; padding: 0.75rem;
+  background: #6d4c41; color: #fff; text-decoration: none;
+  border-radius: 8px; font-weight: 600;
+}
+
+.nav-menu {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-menu.open {
+  display: block;
+}
+.nav-menu a {
+  display: block;
+  padding: 0.75rem 0;
+  color: #fff;     
+  text-decoration: none;
+}                                    /* big tap targets */}                                    /* big tap targets */
+
+/* =========================================================
+   Example C: progressive enhancement (exactly as in the handout)
+   ========================================================= */
+
+/* Base: phones get the essentials, one column */
+.menu { display: grid; gap: 1rem; }
+.gallery img:nth-child(n + 4) { display: none; }  /* show only 3 photos */
+
+/* Tablets and up: more room, so add more */
+@media (min-width: 768px) {
+  .menu { grid-template-columns: repeat(2, 1fr); }
+  .gallery img:nth-child(n + 4) { display: block; }  /* show all photos */
+}
+
+/* =========================================================
+   Further enhancements for larger screens (Example B, right-hand column)
+   ========================================================= */
+@media (min-width: 768px) {
+  body { padding-bottom: 0; }
+  .page { max-width: 1000px; margin: 0 auto; }
+  .order-bar { position: static; border: none; padding: 1rem 1rem 0; }   /* normal button */
+  .order-button { display: inline-block; padding: 0.75rem 2rem; }
+  .location { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+  .map-embed { height: 200px; background: #e0d6cf;
+               border-radius: 8px; display: flex; align-items: center;
+               justify-content: center; color: #3e2723; }
+  .about-full { display: block; }
+  .about-link { display: none; }
+
+  /* Hamburger menu desktop overrides */
+  .menu-toggle {
+    display: none;
+  }                                  
+  /* no button on wide screens */
+  .site-header nav {
+    flex-basis: auto;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 1.5rem;
+  }
+}

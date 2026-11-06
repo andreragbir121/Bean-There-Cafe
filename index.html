@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bean There Café – Mobile-First Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Priority 1: opening hours and "Open now" status: top of the page -->
+      <header class="site-header">
+        <h1>Bean There Café</h1>
+        <p><span class="status">Open now</span> Mon–Fri 7:00–18:00</p>
+      <button
+        class="menu-toggle"
+        aria-expanded="false"
+        aria-controls="main-menu"
+      >
+        ☰ Menu
+      </button>
+      <nav aria-label="Main">
+        <ul id="main-menu" class="nav-menu">
+          <li><a href="/drinks">Drinks</a></li>
+          <li><a href="/order">Order</a></li>
+          <li><a href="/hours">Hours</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+      <!-- Priority 3: "Order ahead": sticky bottom bar on phones, normal button on desktop -->
+      <div class="order-bar">
+        <a href="#order" class="order-button">Order ahead</a>
+      </div>
+
+      <main>
+        <!-- Priority 2: menu with prices: one column on phones, two from 768px -->
+        <section>
+          <h2>Menu</h2>
+          <div class="menu">
+            <article class="menu-item">
+              <h3>Café Latte</h3>
+              <p>Espresso with steamed milk.</p>
+              <p class="price">$4.50</p>
+            </article>
+            <article class="menu-item">
+              <h3>Cappuccino</h3>
+              <p>Equal parts espresso, milk and foam.</p>
+              <p class="price">$4.25</p>
+            </article>
+            <article class="menu-item">
+              <h3>Iced Coffee</h3>
+              <p>Cold brew over ice.</p>
+              <p class="price">$4.00</p>
+            </article>
+            <article class="menu-item">
+              <h3>Hot Chocolate</h3>
+              <p>Rich cocoa with whipped cream.</p>
+              <p class="price">$3.75</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Priority 4: location: link to the map app on phones, map added on desktop -->
+        <section class="location">
+          <div>
+            <h2>Find us</h2>
+            <p>Ground floor, Student Centre, Main Campus</p>
+            <p>
+              <a href="https://maps.google.com/?q=Student+Centre"
+                >Open in Maps</a
+              >
+            </p>
+          </div>
+          <div class="map-embed" aria-hidden="true">
+            Map shown here on larger screens
+          </div>
+        </section>
+
+        <!-- Priority 5: photo gallery: 3 photos on phones, all 6 from 768px -->
+        <section>
+          <h2>Gallery</h2>
+          <div class="gallery">
+            <img
+              loading="lazy"
+              alt="Barista pouring latte art"
+              src="images/photo1.png"
+            />
+            <img
+              loading="lazy"
+              alt="Students studying at café tables"
+              src="images/photo2.png"
+            />
+            <img
+              loading="lazy"
+              alt="Fresh pastries on the counter"
+              src="images/photo3.png"
+            />
+            <img
+              loading="lazy"
+              alt="Outdoor seating area"
+              src="images/photo4.png"
+            />
+            <img
+              loading="lazy"
+              alt="Coffee beans being roasted"
+              src="images/photo5.png"
+            />
+            <img
+              loading="lazy"
+              alt="Café team behind the counter"
+              src="images/photo6.png"
+            />
+          </div>
+        </section>
+
+        <!-- Priority 6: staff and history: link on phones, short section added on desktop -->
+        <section>
+          <h2>About us</h2>
+          <p class="about-link">
+            <a href="/about">Meet the team and read our story</a>
+          </p>
+          <div class="about-full">
+            <p>
+              Bean There opened in 2019, run by students for students. Our
+              baristas are all current students, and our beans come from a local
+              roaster. <a href="/about">Read more</a>
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
