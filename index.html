@@ -130,7 +130,66 @@
             </p>
           </div>
         </section>
-      </main>
+
+        <!-- Activity 4: Order Ahead Form -->
+         <section id="order-form-section" class="order-section">
+          <h2>Order Ahead</h2>
+          <form id="order-form" novalidate>
+            
+            <!-- Name -->
+             <div class="form-group">
+              <label for="user-name">Full Name</label>
+              <input type="text" id="user-name" name="name" autocomplete="name" required>
+            </div>
+            
+            <!-- Email -->
+             <div class="form-group">
+              <label for="user-email">Email Address</label>
+              <input type="email" id="user-email" name="email" autocomplete="email" required>
+            </div>
+            
+            <!-- Phone -->
+             <div class="form-group">
+              <label for="user-phone">Phone Number</label>
+              <input type="tel" id="user-phone" name="phone" autocomplete="tel" inputmode="tel" required>
+            </div>
+            
+            <!-- Student ID -->
+             <div class="form-group">
+              <label for="student-id">Student ID</label>
+              <input type="text" id="student-id" name="studentid" inputmode="numeric" pattern="[0-9]{8}" aria-describedby="student-id-error">
+              <p id="student-id-error" class="error-message" hidden>Please enter a valid 8 digit Student ID.</p>
+            </div>
+
+              <!-- Drink Choice -->
+              <div class="form-group">
+                <label for="drink-choice">Drink Choice</label>
+                <select id="drink-choice" name="drink" required>
+                <option value=">Select a Drink<" disabled selected>Select a Drink</option>
+                <option value="espresso">Espresso</option>
+                <option value="latte">Caffè Latte</option>
+                <option value="cappuccino">Cappuccino</option>
+                <option value="cold-brew">Cold Brew</option>
+                </select>
+              </div>
+
+                <!-- Pickup Time -->
+              <div class="form-group">
+                <label for="pickup-time">Pickup Time</label>
+                <input type="time" id="pickup-time" name="pickuptime" required>
+              </div>
+
+                <!-- Notes Box -->
+              <div class="form-group">
+                <label for="order-notes">Special Instructions/Notes</label>
+                <textarea id="order-notes" name="notes" rows="3"></textarea>
+              </div>
+              
+              <button type="submit" class="submit-btn">Place Order</button>
+            </form>
+          </section>
+      
+        </main>
     </div>
   </body>
 </html>
